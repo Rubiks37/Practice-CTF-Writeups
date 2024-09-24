@@ -3,7 +3,7 @@
 The idea of this challenge was to break an improperly encrypted one time pad encryption.
 
 To start, we were given 2 files. 
-- A python file named `transmit.py`
+- A Python file named `transmit.py`
 - A text file named `out.txt`
 
 We open transmit.py and this is its contents:
@@ -145,7 +145,7 @@ You can definitely see that there are bits of plain text popping up in this part
 
 ---
 
-This proves to be a little bit annoying do to by hand, so I wrote some other programs to make this a bit easier. Firstly, I made a new text file, which I called `keyfinding.txt`. Then I wrote a small python script that took 2 numbers that would be written in `keyfinding.txt` and converted them to binary.
+This proves to be a little bit annoying to do by hand, so I wrote some other programs to make this a bit easier. Firstly, I made a new text file, which I called `keyfinding.txt`. Then I wrote a small python script that took 2 numbers that would be written in `keyfinding.txt` and converted them to binary.
     with open('keyfinding.txt') as file:
         data = file.readlines()
     if len(data) < 2:
@@ -220,7 +220,7 @@ I went ahead and found the next couple of bytes of the key using the same method
 
 ---
 
-Now at this point, we can't do anything else with this chunk, but we have gathered more of the key, which means we should be able to decrypt more of the message. We can use this key in our original `untransmit.py` file and gather more of the message. At this point, we can find another partially decoded chunk that lines up in such a way that we can infer some of it in order to retrieve more and more of the original key. Here is a example of such a chunk: `' glow fro\x96ì@¬a1n'`. We can definitely say that the next 2 chararacters should be `m ` in order to get `glow from `. Eventually, if we repeat this process enough times, we can get the full key as an integer. This resulting key is `54098576040305148367357017600`. Using this in our original program gets us the full decrypted message, as seen below:
+Now at this point, we can't do anything else with this chunk, but we have gathered more of the key, which means we should be able to decrypt more of the message. We can use this key in our original `untransmit.py` file and gather more of the message. At this point, we can find another partially decoded chunk that lines up in such a way that we can infer some of it in order to retrieve more and more of the original key. Here is a example of such a chunk: `' glow fro\x96ì@¬a1n'`. We can definitely say that the next 2 characters should be `m ` in order to get `glow from `. Eventually, if we repeat this process enough times, we can get the full key as an integer. This resulting key is `54098576040305148367357017600`. Using this in our original program gets us the full decrypted message, as seen below:
 
     Chapter 1 The Enigmatic Code
     In a dimly lit room in downtown Chicago, Ethan "Cipher" Reynolds sat hunched over his computer, the glow from the monitor casting a bluish hue across his determined face. The clock on the wall ticked past midnight, but Ethan paid no mind. He was deep into cracking one of the most intricate encryption systems hed ever encountered a challenge posted on an obscure forum known for its cryptographic puzzles. The flag hidden within, pctf{4_th3_tw0_t1m3_4a324510356}
@@ -285,4 +285,4 @@ As we can see from this, our flag is right near the top: `pctf{4_th3_tw0_t1m3_4a
 - Difficulty: 4/10
 - Enjoyability: 7/10
 
-I have never solved a cryptography challenge as hard as this, so I'm super proud of this one. It was a little tedious near the end, but it felt very nice to see the plaintext shot out of my code. I hope you enjoyed my first ever writeup!
+I have never solved a cryptography challenge as hard as this, so I'm super proud of this one. It was a little tedious near the end, but it felt very nice to see the plaintext shoot out of my code. I hope you enjoyed my first ever writeup!
