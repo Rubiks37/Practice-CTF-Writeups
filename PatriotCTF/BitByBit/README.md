@@ -146,6 +146,7 @@ You can definitely see that there are bits of plain text popping up in this part
 ---
 
 This proves to be a little bit annoying to do by hand, so I wrote some other programs to make this a bit easier. Firstly, I made a new text file, which I called `keyfinding.txt`. Then I wrote a small python script that took 2 numbers that would be written in `keyfinding.txt` and converted them to binary.
+
     with open('keyfinding.txt') as file:
         data = file.readlines()
     if len(data) < 2:
